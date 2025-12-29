@@ -1,0 +1,119 @@
+.loading {
+  padding: 24px;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.card h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 0 0 16px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.form input {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.form button {
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 13px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.listItem strong {
+  display: block;
+  font-size: 14px;
+}
+
+.listItem span {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.colorChip,
+.colorChipMuted {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  border: 1px solid #cbd5f5;
+  background: #ffffff;
+}
+
+.colorChipMuted {
+  color: #94a3b8;
+}
+
+.empty {
+  color: #94a3b8;
+  font-size: 14px;
+}

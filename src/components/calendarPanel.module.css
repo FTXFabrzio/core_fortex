@@ -1,0 +1,345 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.panelDate {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #94a3b8;
+  text-transform: capitalize;
+}
+
+.panelActions {
+  display: flex;
+  gap: 8px;
+}
+
+.iconButton {
+  height: 32px;
+  width: 32px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #bb0000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.calendarCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.monthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.monthTitle {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.monthControls {
+  display: flex;
+  gap: 6px;
+}
+
+.monthButton {
+  height: 28px;
+  width: 28px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.weekHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  font-size: 11px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  justify-items: center;
+}
+
+.dayButton {
+  height: 32px;
+  width: 32px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: #0f172a;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dayButtonMuted {
+  color: #cbd5e1;
+  cursor: default;
+  height: 32px;
+  width: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dayButtonSelected {
+  background: #b91c1c;
+  color: #ffffff;
+}
+
+.dayButtonToday {
+  border: 1px solid #b91c1c;
+}
+
+.taskSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pomodoro {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pomodoroBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pomodoroLabel {
+  font-size: 13px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.pomodoroTime {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.pomodoroButton {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #ffffff;
+  background: #bb0000;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.pomodoroTeal {
+  background: #14b8a6;
+}
+
+.pomodoroBlue {
+  background: #2563eb;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.taskItem {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.taskIcon {
+  height: 40px;
+  width: 40px;
+  border-radius: 12px;
+  background: #b91c1c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.taskTime {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+.deleteButton {
+  border: none;
+  background: transparent;
+  color: #b91c1c;
+  cursor: pointer;
+}
+
+.muted {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.error {
+  font-size: 12px;
+  color: #b91c1c;
+}
+
+.empty {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 30;
+}
+
+.modal {
+  width: 100%;
+  max-width: 360px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.closeButton {
+  border: none;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.input,
+.textarea,
+.select {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  background: #ffffff;
+}
+
+.textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.primaryButton {
+  border: none;
+  background: #b91c1c;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primaryButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 520px) {
+  .modalOverlay {
+    padding: 16px;
+  }
+
+  .modal {
+    max-width: 100%;
+    padding: 20px;
+  }
+}

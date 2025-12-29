@@ -1,0 +1,125 @@
+.loading {
+  padding: 24px;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.toolbar h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 8px 12px;
+  min-width: 260px;
+  background: #ffffff;
+  color: #9ca3af;
+}
+
+.searchBox input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  width: 100%;
+}
+
+.filterButton {
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  color: #bb0000;
+  margin-bottom: 12px;
+}
+
+.list {
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 6px 1fr;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.06);
+  text-decoration: none;
+  color: inherit;
+}
+
+.accent {
+  border-radius: 8px;
+  width: 6px;
+  height: 100%;
+  align-self: stretch;
+}
+
+.cardBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.cardAction {
+  height: 28px;
+  width: 28px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+}
+
+.empty {
+  padding: 18px;
+  background: #ffffff;
+  border: 1px dashed #e5e7eb;
+  border-radius: 12px;
+  color: #9ca3af;
+}
+
+@media (max-width: 640px) {
+  .searchBox {
+    width: 100%;
+  }
+
+  .cardBody {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

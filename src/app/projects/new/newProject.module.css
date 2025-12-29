@@ -1,0 +1,60 @@
+.loading {
+  padding: 24px;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+  max-width: 520px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.form input,
+.form select {
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.actions button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 13px;
+}

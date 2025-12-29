@@ -1,0 +1,262 @@
+.loading {
+  padding: 24px;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.06);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.cardHeader h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.darkButton {
+  border: none;
+  background: #111827;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.domainList,
+.projectList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.domainItem,
+.projectItem {
+  display: grid;
+  grid-template-columns: 6px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+}
+
+.domainAccent,
+.projectAccent {
+  width: 6px;
+  height: 100%;
+  border-radius: 6px;
+  align-self: stretch;
+}
+
+.domainInfo,
+.projectItem div {
+  display: grid;
+  gap: 4px;
+}
+
+.domainInfo strong,
+.projectItem strong {
+  font-size: 13px;
+}
+
+.domainCode {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 10px;
+  width: fit-content;
+}
+
+.projectItem span {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  color: #9ca3af;
+}
+
+.searchRow input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 13px;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+}
+
+.error {
+  color: #bb0000;
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.empty {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 20;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  width: min(520px, 100%);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.2);
+  display: grid;
+  gap: 12px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.iconButton {
+  border: none;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form input,
+.form select {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  background: #ffffff;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.selectWrapper select {
+  width: 100%;
+  appearance: none;
+  padding-right: 40px;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.primaryButton {
+  border-radius: 12px;
+  border: none;
+  padding: 12px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  background: #bb0000;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.secondaryButton {
+  border-radius: 12px;
+  border: none;
+  padding: 12px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  background: #f3f4f6;
+  color: #111827;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .modalActions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+}
