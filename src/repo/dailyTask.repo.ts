@@ -26,8 +26,8 @@ export async function listByOwner(
   options?: PaginationOptions
 ) {
   let query = supabase
-    .from<daily_task>("daily_task")
-    .select("*")
+    .from("daily_task")
+    .select<"*", daily_task>("*")
     .eq("owner_user_id", ownerUserId)
     .order("start_at", { ascending: true })
     .order("created_at", { ascending: true });
@@ -44,8 +44,8 @@ export async function listByOwnerAndRange(
   options?: PaginationOptions
 ) {
   let query = supabase
-    .from<daily_task>("daily_task")
-    .select("*")
+    .from("daily_task")
+    .select<"*", daily_task>("*")
     .eq("owner_user_id", ownerUserId)
     .gte("start_at", startAt)
     .lte("start_at", endAt)
@@ -59,8 +59,8 @@ export async function listByOwnerAndRange(
 
 export async function getById(id: string) {
   const { data, error } = await supabase
-    .from<daily_task>("daily_task")
-    .select("*")
+    .from("daily_task")
+    .select<"*", daily_task>("*")
     .eq("id", id)
     .single();
 
@@ -69,9 +69,9 @@ export async function getById(id: string) {
 
 export async function create(payload: DailyTaskInsert) {
   const { data, error } = await supabase
-    .from<daily_task>("daily_task")
+    .from("daily_task")
     .insert(payload)
-    .select("*")
+    .select<"*", daily_task>("*")
     .single();
 
   return { data, error };
@@ -79,10 +79,10 @@ export async function create(payload: DailyTaskInsert) {
 
 export async function update(id: string, patch: DailyTaskUpdate) {
   const { data, error } = await supabase
-    .from<daily_task>("daily_task")
+    .from("daily_task")
     .update(patch)
     .eq("id", id)
-    .select("*")
+    .select<"*", daily_task>("*")
     .single();
 
   return { data, error };
@@ -90,11 +90,14 @@ export async function update(id: string, patch: DailyTaskUpdate) {
 
 export async function remove(id: string) {
   const { data, error } = await supabase
-    .from<daily_task>("daily_task")
+    .from("daily_task")
     .delete()
     .eq("id", id)
-    .select("*")
+    .select<"*", daily_task>("*")
     .single();
 
   return { data, error };
 }
+
+
+

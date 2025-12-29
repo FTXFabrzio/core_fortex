@@ -24,8 +24,8 @@ export async function listByStory(
   options?: PaginationOptions
 ) {
   let query = supabase
-    .from<test_log>("test_log")
-    .select("*")
+    .from("test_log")
+    .select<"*", test_log>("*")
     .eq("story_id", storyId)
     .order("created_at", { ascending: false });
 
@@ -36,8 +36,8 @@ export async function listByStory(
 
 export async function getById(id: string) {
   const { data, error } = await supabase
-    .from<test_log>("test_log")
-    .select("*")
+    .from("test_log")
+    .select<"*", test_log>("*")
     .eq("id", id)
     .single();
 
@@ -46,9 +46,9 @@ export async function getById(id: string) {
 
 export async function create(payload: TestLogInsert) {
   const { data, error } = await supabase
-    .from<test_log>("test_log")
+    .from("test_log")
     .insert(payload)
-    .select("*")
+    .select<"*", test_log>("*")
     .single();
 
   return { data, error };
@@ -56,10 +56,10 @@ export async function create(payload: TestLogInsert) {
 
 export async function update(id: string, patch: TestLogUpdate) {
   const { data, error } = await supabase
-    .from<test_log>("test_log")
+    .from("test_log")
     .update(patch)
     .eq("id", id)
-    .select("*")
+    .select<"*", test_log>("*")
     .single();
 
   return { data, error };
@@ -67,11 +67,14 @@ export async function update(id: string, patch: TestLogUpdate) {
 
 export async function remove(id: string) {
   const { data, error } = await supabase
-    .from<test_log>("test_log")
+    .from("test_log")
     .delete()
     .eq("id", id)
-    .select("*")
+    .select<"*", test_log>("*")
     .single();
 
   return { data, error };
 }
+
+
+

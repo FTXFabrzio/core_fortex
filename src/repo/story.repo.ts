@@ -26,8 +26,8 @@ export async function listByProject(
   options?: PaginationOptions
 ) {
   let query = supabase
-    .from<story>("story")
-    .select("*")
+    .from("story")
+    .select<"*", story>("*")
     .eq("project_id", projectId)
     .order("priority", { ascending: false })
     .order("created_at", { ascending: false });
@@ -42,8 +42,8 @@ export async function listByEpic(
   options?: PaginationOptions
 ) {
   let query = supabase
-    .from<story>("story")
-    .select("*")
+    .from("story")
+    .select<"*", story>("*")
     .eq("epic_id", epicId)
     .order("priority", { ascending: false })
     .order("created_at", { ascending: false });
@@ -55,8 +55,8 @@ export async function listByEpic(
 
 export async function getById(id: string) {
   const { data, error } = await supabase
-    .from<story>("story")
-    .select("*")
+    .from("story")
+    .select<"*", story>("*")
     .eq("id", id)
     .single();
 
@@ -65,9 +65,9 @@ export async function getById(id: string) {
 
 export async function create(payload: StoryInsert) {
   const { data, error } = await supabase
-    .from<story>("story")
+    .from("story")
     .insert(payload)
-    .select("*")
+    .select<"*", story>("*")
     .single();
 
   return { data, error };
@@ -75,10 +75,10 @@ export async function create(payload: StoryInsert) {
 
 export async function update(id: string, patch: StoryUpdate) {
   const { data, error } = await supabase
-    .from<story>("story")
+    .from("story")
     .update(patch)
     .eq("id", id)
-    .select("*")
+    .select<"*", story>("*")
     .single();
 
   return { data, error };
@@ -86,11 +86,14 @@ export async function update(id: string, patch: StoryUpdate) {
 
 export async function remove(id: string) {
   const { data, error } = await supabase
-    .from<story>("story")
+    .from("story")
     .delete()
     .eq("id", id)
-    .select("*")
+    .select<"*", story>("*")
     .single();
 
   return { data, error };
 }
+
+
+

@@ -24,8 +24,8 @@ export async function listByProject(
   options?: PaginationOptions
 ) {
   let query = supabase
-    .from<epic>("epic")
-    .select("*")
+    .from("epic")
+    .select<"*", epic>("*")
     .eq("project_id", projectId)
     .order("order_no", { ascending: true })
     .order("created_at", { ascending: true });
@@ -37,8 +37,8 @@ export async function listByProject(
 
 export async function getById(id: string) {
   const { data, error } = await supabase
-    .from<epic>("epic")
-    .select("*")
+    .from("epic")
+    .select<"*", epic>("*")
     .eq("id", id)
     .single();
 
@@ -47,9 +47,9 @@ export async function getById(id: string) {
 
 export async function create(payload: EpicInsert) {
   const { data, error } = await supabase
-    .from<epic>("epic")
+    .from("epic")
     .insert(payload)
-    .select("*")
+    .select<"*", epic>("*")
     .single();
 
   return { data, error };
@@ -57,10 +57,10 @@ export async function create(payload: EpicInsert) {
 
 export async function update(id: string, patch: EpicUpdate) {
   const { data, error } = await supabase
-    .from<epic>("epic")
+    .from("epic")
     .update(patch)
     .eq("id", id)
-    .select("*")
+    .select<"*", epic>("*")
     .single();
 
   return { data, error };
@@ -68,11 +68,14 @@ export async function update(id: string, patch: EpicUpdate) {
 
 export async function remove(id: string) {
   const { data, error } = await supabase
-    .from<epic>("epic")
+    .from("epic")
     .delete()
     .eq("id", id)
-    .select("*")
+    .select<"*", epic>("*")
     .single();
 
   return { data, error };
 }
+
+
+

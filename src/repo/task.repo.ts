@@ -24,8 +24,8 @@ export async function listByStory(
   options?: PaginationOptions
 ) {
   let query = supabase
-    .from<task>("task")
-    .select("*")
+    .from("task")
+    .select<"*", task>("*")
     .eq("story_id", storyId)
     .order("order_no", { ascending: true })
     .order("created_at", { ascending: true });
@@ -37,8 +37,8 @@ export async function listByStory(
 
 export async function getById(id: string) {
   const { data, error } = await supabase
-    .from<task>("task")
-    .select("*")
+    .from("task")
+    .select<"*", task>("*")
     .eq("id", id)
     .single();
 
@@ -47,9 +47,9 @@ export async function getById(id: string) {
 
 export async function create(payload: TaskInsert) {
   const { data, error } = await supabase
-    .from<task>("task")
+    .from("task")
     .insert(payload)
-    .select("*")
+    .select<"*", task>("*")
     .single();
 
   return { data, error };
@@ -57,10 +57,10 @@ export async function create(payload: TaskInsert) {
 
 export async function update(id: string, patch: TaskUpdate) {
   const { data, error } = await supabase
-    .from<task>("task")
+    .from("task")
     .update(patch)
     .eq("id", id)
-    .select("*")
+    .select<"*", task>("*")
     .single();
 
   return { data, error };
@@ -68,11 +68,14 @@ export async function update(id: string, patch: TaskUpdate) {
 
 export async function remove(id: string) {
   const { data, error } = await supabase
-    .from<task>("task")
+    .from("task")
     .delete()
     .eq("id", id)
-    .select("*")
+    .select<"*", task>("*")
     .single();
 
   return { data, error };
 }
+
+
+

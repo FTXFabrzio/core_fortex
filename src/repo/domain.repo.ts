@@ -26,8 +26,8 @@ export async function listByOwner(
   options?: PaginationOptions
 ) {
   let query = supabase
-    .from<core_domain>("core_domain")
-    .select("*")
+    .from("core_domain")
+    .select<"*", core_domain>("*")
     .eq("owner_user_id", ownerUserId)
     .order("created_at", { ascending: false });
 
@@ -38,8 +38,8 @@ export async function listByOwner(
 
 export async function getById(id: string) {
   const { data, error } = await supabase
-    .from<core_domain>("core_domain")
-    .select("*")
+    .from("core_domain")
+    .select<"*", core_domain>("*")
     .eq("id", id)
     .single();
 
@@ -48,9 +48,9 @@ export async function getById(id: string) {
 
 export async function create(payload: CoreDomainInsert) {
   const { data, error } = await supabase
-    .from<core_domain>("core_domain")
+    .from("core_domain")
     .insert(payload)
-    .select("*")
+    .select<"*", core_domain>("*")
     .single();
 
   return { data, error };
@@ -58,10 +58,10 @@ export async function create(payload: CoreDomainInsert) {
 
 export async function update(id: string, patch: CoreDomainUpdate) {
   const { data, error } = await supabase
-    .from<core_domain>("core_domain")
+    .from("core_domain")
     .update(patch)
     .eq("id", id)
-    .select("*")
+    .select<"*", core_domain>("*")
     .single();
 
   return { data, error };
@@ -69,11 +69,14 @@ export async function update(id: string, patch: CoreDomainUpdate) {
 
 export async function remove(id: string) {
   const { data, error } = await supabase
-    .from<core_domain>("core_domain")
+    .from("core_domain")
     .delete()
     .eq("id", id)
-    .select("*")
+    .select<"*", core_domain>("*")
     .single();
 
   return { data, error };
 }
+
+
+

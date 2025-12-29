@@ -29,8 +29,8 @@ export async function listByOwner(
   options?: PaginationOptions
 ) {
   let query = supabase
-    .from<core_project>("core_project")
-    .select("*")
+    .from("core_project")
+    .select<"*", core_project>("*")
     .eq("owner_user_id", ownerUserId)
     .order("created_at", { ascending: false });
 
@@ -41,8 +41,8 @@ export async function listByOwner(
 
 export async function getById(id: string) {
   const { data, error } = await supabase
-    .from<core_project>("core_project")
-    .select("*")
+    .from("core_project")
+    .select<"*", core_project>("*")
     .eq("id", id)
     .single();
 
@@ -51,9 +51,9 @@ export async function getById(id: string) {
 
 export async function create(payload: CoreProjectInsert) {
   const { data, error } = await supabase
-    .from<core_project>("core_project")
+    .from("core_project")
     .insert(payload)
-    .select("*")
+    .select<"*", core_project>("*")
     .single();
 
   return { data, error };
@@ -61,10 +61,10 @@ export async function create(payload: CoreProjectInsert) {
 
 export async function update(id: string, patch: CoreProjectUpdate) {
   const { data, error } = await supabase
-    .from<core_project>("core_project")
+    .from("core_project")
     .update(patch)
     .eq("id", id)
-    .select("*")
+    .select<"*", core_project>("*")
     .single();
 
   return { data, error };
@@ -72,11 +72,14 @@ export async function update(id: string, patch: CoreProjectUpdate) {
 
 export async function remove(id: string) {
   const { data, error } = await supabase
-    .from<core_project>("core_project")
+    .from("core_project")
     .delete()
     .eq("id", id)
-    .select("*")
+    .select<"*", core_project>("*")
     .single();
 
   return { data, error };
 }
+
+
+
